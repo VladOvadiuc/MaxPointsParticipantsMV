@@ -46,7 +46,7 @@ public class NotaXMLRepository extends AbstractXMLRepository<Pair<String, String
 
     public void createFile(Nota notaObj, Student student) {
         TemaValidator tval = new TemaValidator();
-        TemaFileRepository trepo = new TemaFileRepository(tval, "teme.txt");
+        TemaFileRepository trepo = new TemaFileRepository(tval, "src/main/teme.txt");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(student.getNume() + ".txt", false))) {
             super.findAll().forEach(nota -> {
                 if (nota.getID().getObject1().equals(student.getID())) {
