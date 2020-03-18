@@ -3,6 +3,5 @@
   <component name="ExternalDependencies">
     <plugin id="JUnit" />
     <plugin id="Maven 2 Integration" />
-    <plugin id="org.dpytel.intellij.plugin.maventest" />
   </component>
 </project>
