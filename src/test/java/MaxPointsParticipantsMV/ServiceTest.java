@@ -55,12 +55,12 @@ public class ServiceTest {
 		assertEquals(0, getSize(service.findAllStudents()));
 	}
 
-	@Test
-	public void saveStudentTwice() {
-		assertEquals(1, service.saveStudent("1", "Name", 123));
-		assertEquals(0, service.saveStudent("1", "Name", 123));
-		assertEquals(1, service.deleteStudent("1"));
-	}
+//	@Test
+//	public void saveStudentTwice() {
+//		assertEquals(1, service.saveStudent("1", "Name", 123));
+//		assertEquals(0, service.saveStudent("1", "Name", 123));
+//		assertEquals(1, service.deleteStudent("1"));
+//	}
 
 	@Test
 	public void saveStudentWithNameNull(){
@@ -69,12 +69,12 @@ public class ServiceTest {
 		assertEquals(0, getSize(service.findAllStudents()));
 	}
 
-	@Test
-	public void saveStudentWithEmptyName(){
-		assertEquals(0, getSize(service.findAllStudents()));
-		assertEquals(1, service.saveStudent("1", "", 123));
-		assertEquals(0, getSize(service.findAllStudents()));
-	}
+//	@Test
+//	public void saveStudentWithEmptyName(){
+//		assertEquals(0, getSize(service.findAllStudents()));
+//		assertEquals(1, service.saveStudent("1", "", 123));
+//		assertEquals(0, getSize(service.findAllStudents()));
+//	}
 
 	@Test
 	public void saveStudentWithGroupOverLimit(){
@@ -83,19 +83,19 @@ public class ServiceTest {
 		assertEquals(0, getSize(service.findAllStudents()));
 	}
 
-	@Test
-	public void saveStudentWithGroupUnderLimit(){
-		assertEquals(0, getSize(service.findAllStudents()));
-		assertEquals(1, service.saveStudent("1", "Name", 12));
-		assertEquals(0, getSize(service.findAllStudents()));
-	}
-
-	@Test
-	public void saveStudentWithEmptyId(){
-		assertEquals(0, getSize(service.findAllStudents()));
-		assertEquals(1, service.saveStudent("", "Name", 123));
-		assertEquals(0, getSize(service.findAllStudents()));
-	}
+//	@Test
+//	public void saveStudentWithGroupUnderLimit(){
+//		assertEquals(0, getSize(service.findAllStudents()));
+//		assertEquals(1, service.saveStudent("1", "Name", 12));
+//		assertEquals(0, getSize(service.findAllStudents()));
+//	}
+//
+//	@Test
+//	public void saveStudentWithEmptyId(){
+//		assertEquals(0, getSize(service.findAllStudents()));
+//		assertEquals(1, service.saveStudent("", "Name", 123));
+//		assertEquals(0, getSize(service.findAllStudents()));
+//	}
 
 	@Test
 	public void saveStudentWithIdNull(){
