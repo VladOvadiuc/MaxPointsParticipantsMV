@@ -29,6 +29,10 @@ public class Service {
         return studentXmlRepo.findOne(id);
     }
 
+    public Tema findTemaById(String id) {
+        return temaXmlRepo.findOne(id);
+    }
+
     public Iterable<Tema> findAllTeme() { return temaXmlRepo.findAll(); }
 
     public Iterable<Nota> findAllNote() { return notaXmlRepo.findAll(); }
