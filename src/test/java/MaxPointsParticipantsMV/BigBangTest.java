@@ -5,6 +5,7 @@ import java.util.stream.StreamSupport;
 import org.junit.Test;
 
 import domain.Nota;
+import domain.Pair;
 import domain.Student;
 import domain.Tema;
 import repository.NotaXMLRepository;
@@ -32,19 +33,19 @@ public class BigBangTest {
 
 	@Test
 	public void testAddStudent() {
-		assertEquals(1, service.saveStudent("1", "Name", 123));
-		Student student = service.findStudentById("1");
-		assertEquals(student, service.findStudentById("1"));
-		assertEquals("1", student.getID());
+		assertEquals(1, service.saveStudent("100", "Name", 123));
+		Student student = service.findStudentById("100");
+		assertEquals(student, service.findStudentById("100"));
+		assertEquals("100", student.getID());
 		assertEquals("Name", student.getNume());
 		assertEquals(123, student.getGrupa());
 	}
 
 	@Test
 	public void testAddAssignment() {
-		assertEquals(1, service.saveTema("1", "Tema 1", 3, 2));
-		Tema tema = service.findTemaById("1");
-		assertEquals("1", tema.getID());
+		assertEquals(1, service.saveTema("100", "Tema 1", 3, 2));
+		Tema tema = service.findTemaById("100");
+		assertEquals("100", tema.getID());
 		assertEquals("Tema 1", tema.getDescriere());
 		assertEquals(3, tema.getDeadline());
 		assertEquals(2,  tema.getStartline());
@@ -52,14 +53,36 @@ public class BigBangTest {
 
 	@Test
 	public void testAddGrade() {
-		assertEquals(1, service.saveNota("1", "1", 7.0, 2, "fuarte bine"));
+		assertEquals(1, service.saveTema("100", "Tema 1", 3, 2));
+		assertEquals(1, service.saveStudent("100", "Name", 123));
+		assertEquals(1, service.saveNota("100", "100", 7.0, 2, "fuarte bine"));
+		Nota nota = service.findNotaById(new Pair<>("100", "100"));
+		assertEquals(7.0, nota.getNota());
+		assertEquals(2, nota.getSaptamanaPredare());
+		assertEquals("fuarte bine", nota.getFeedback());
+
 	}
 
 	@Test
 	public void testAll() {
-		assertEquals(1, service.saveStudent("2", "Name", 123));
-		assertEquals(1, service.saveTema("2", "Tema 1", 3, 2));
-		assertEquals(1, service.saveNota("2", "2", 7.0, 2, "fuarte bine"));
+		assertEquals(1, service.saveStudent("200", "Name", 123));
+		Student student = service.findStudentById("200");
+		assertEquals("200", student.getID());
+		assertEquals("Name", student.getNume());
+
+		assertEquals(1, service.saveTema("200", "Tema 1", 3, 2));
+		Tema tema = service.findTemaById("200");
+		assertEquals("200", tema.getID());
+		assertEquals("Tema 1", tema.getDescriere());
+
+		assertEquals(1, service.saveNota("200", "200", 7.0, 2, "fuarte bine"));
+
+		Nota nota = service.findNotaById(new Pair<>("200", "200"));
+		assertEquals(7.0, nota.getNota());
+		assertEquals(2, nota.getSaptamanaPredare());
+		assertEquals("fuarte bine", nota.getFeedback());
+
+
 	}
 
 }

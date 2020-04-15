@@ -33,6 +33,10 @@ public class Service {
         return temaXmlRepo.findOne(id);
     }
 
+    public Nota findNotaById(Pair<String, String> ids) {
+        return notaXmlRepo.findOne(ids);
+    }
+
     public Iterable<Tema> findAllTeme() { return temaXmlRepo.findAll(); }
 
     public Iterable<Nota> findAllNote() { return notaXmlRepo.findAll(); }
