@@ -53,10 +53,10 @@ public class BigBangTest {
 
 	@Test
 	public void testAddGrade() {
-		assertEquals(1, service.saveTema("100", "Tema 1", 3, 2));
-		assertEquals(1, service.saveStudent("100", "Name", 123));
-		assertEquals(1, service.saveNota("100", "100", 7.0, 2, "fuarte bine"));
-		Nota nota = service.findNotaById(new Pair<>("100", "100"));
+		assertEquals(1, service.saveTema("300", "Tema 2", 3, 2));
+		assertEquals(1, service.saveStudent("300", "Name1", 123));
+		assertEquals(1, service.saveNota("300", "300", 7.0, 2, "fuarte bine"));
+		Nota nota = service.findNotaById(new Pair<>("300", "300"));
 		assertEquals(7.0, nota.getNota());
 		assertEquals(2, nota.getSaptamanaPredare());
 		assertEquals("fuarte bine", nota.getFeedback());
@@ -81,8 +81,6 @@ public class BigBangTest {
 		assertEquals(7.0, nota.getNota());
 		assertEquals(2, nota.getSaptamanaPredare());
 		assertEquals("fuarte bine", nota.getFeedback());
-
-
 	}
 
 }
