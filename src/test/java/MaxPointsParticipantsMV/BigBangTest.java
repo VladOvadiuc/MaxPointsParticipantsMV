@@ -39,6 +39,8 @@ public class BigBangTest {
 		assertEquals("100", student.getID());
 		assertEquals("Name", student.getNume());
 		assertEquals(123, student.getGrupa());
+
+		assertEquals(1, service.deleteStudent("100"));
 	}
 
 	@Test
@@ -49,6 +51,9 @@ public class BigBangTest {
 		assertEquals("Tema 1", tema.getDescriere());
 		assertEquals(3, tema.getDeadline());
 		assertEquals(2,  tema.getStartline());
+
+
+		assertEquals(1, service.deleteTema("100"));
 	}
 
 	@Test
@@ -61,6 +66,9 @@ public class BigBangTest {
 		assertEquals(2, nota.getSaptamanaPredare());
 		assertEquals("fuarte bine", nota.getFeedback());
 
+		assertEquals(1, service.deleteNota("300", "300"));
+		assertEquals(1, service.deleteStudent("300"));
+		assertEquals(1, service.deleteTema("300"));
 	}
 
 	@Test
@@ -81,6 +89,10 @@ public class BigBangTest {
 		assertEquals(7.0, nota.getNota());
 		assertEquals(2, nota.getSaptamanaPredare());
 		assertEquals("fuarte bine", nota.getFeedback());
+
+		assertEquals(1, service.deleteNota("200", "200"));
+		assertEquals(1, service.deleteStudent("200"));
+		assertEquals(1, service.deleteTema("200"));
 	}
 
 }
